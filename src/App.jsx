@@ -15,8 +15,6 @@ const App = () => {
   
   useEffect(()=>{
     checkAuth();
-    
-    console.log("APP Page: ",authUser);
   },[places])
   
 

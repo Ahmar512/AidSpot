@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { GoogleMap, LoadScript, Marker, InfoWindow, LoadScriptNext } from "@react-google-maps/api";
-import axios from 'axios'
+import { GoogleMap, Marker, InfoWindow, LoadScriptNext } from "@react-google-maps/api";
+
 import { useAuthStore } from '../store/authStore';
 import { star } from '../assets';
 import Loading from '../components/Loading';
@@ -16,8 +16,6 @@ const containerStyle = {
 
 const API_KEY = import.meta.env.VITE_GOOGLE_MAP_API_KEY;
 const GoogleMapPage = ({add}) => {
-  
-  console.log("Addresse",add);
   let center = { lat: 28.6139, lng: 77.2090} ;
   if(add){
     center = add;
@@ -44,7 +42,6 @@ const GoogleMapPage = ({add}) => {
     if(add){
       fetchData(url, requestBody, API_KEY)
     }
-    console.log("places: ", places)
   },[googleMap,add]);
   
   return (
