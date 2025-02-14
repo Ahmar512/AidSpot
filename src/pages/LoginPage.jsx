@@ -32,13 +32,13 @@ const LoginPage = () => {
           <div>
             <p className='text-sm mb-1 ml-1'>Email</p>
             <div className='px-3 py-2 border rounded-lg'>
-              <input type="email" placeholder='Enter your email' className='outline-none w-full' value={user.email} onChange={(e) => setUser({...user, email:e.target.value})}/>
+              <input type="email" required placeholder='Enter your email' className='outline-none w-full' value={user.email} onChange={(e) => setUser({...user, email:e.target.value})}/>
             </div>
           </div>
           <div>
             <p className='text-sm mb-1 ml-1'>Password</p>
             <div className='px-3 py-2 border rounded-lg flex'>
-              <input type={showPassword?"text":"password"} placeholder='Enter your password' className='outline-none w-full' value={user.password} onChange={(e)=> setUser({...user, password:e.target.value})} />
+              <input type={showPassword?"text":"password"} required placeholder='Enter your password' className='outline-none w-full' value={user.password} onChange={(e)=> setUser({...user, password:e.target.value})} />
               {showPassword?(<EyeOff className='text-slate-500 size-6' onClick={handlePasswordToggle} />):(<Eye className='text-slate-500 size-6' onClick={handlePasswordToggle} />)}
             </div>
           </div>

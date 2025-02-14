@@ -18,12 +18,6 @@ export const useAuthStore = create((set)=>({
 
 
     signup: async (data) =>{
-        // createUserWithEmailAndPassword(auth, user.email, user.password).then((value)=>{
-        //   // set({authUser: value});
-        //   console.log(value);
-        // }).catch((error) =>{
-        //   console.log("Error in signin",error.message)
-        // })
         set({isLoading: true});
         try {
           
