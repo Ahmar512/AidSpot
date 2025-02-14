@@ -3,6 +3,7 @@ import { GoogleMap, LoadScript, Marker, InfoWindow, LoadScriptNext } from "@reac
 import axios from 'axios'
 import { useAuthStore } from '../store/authStore';
 import { star } from '../assets';
+import Loading from '../components/Loading';
 
 
 
@@ -48,7 +49,7 @@ const GoogleMapPage = ({add}) => {
   
   return (
     <div>
-        <LoadScriptNext googleMapsApiKey={API_KEY} libraries={library}>
+        <LoadScriptNext googleMapsApiKey={API_KEY} libraries={library} loadingElement={<Loading />}>
             <GoogleMap
              mapContainerStyle={containerStyle} 
              center={center} 

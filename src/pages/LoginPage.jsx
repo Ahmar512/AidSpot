@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore';
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, Loader, Loader2 } from 'lucide-react';
+import { googleIcon } from '../assets';
 
 const LoginPage = () => {
     const navigate = useNavigate()
-    const {authUser, signup, login} = useAuthStore();
+    const {authUser, signup, login, signupWithGoogle, isLoading} = useAuthStore();
     const [user, setUser] = useState({email:"", password:""}); 
     const [showPassword, setShowPassword] = useState(false);
    
@@ -18,6 +19,9 @@ const LoginPage = () => {
       e.preventDefault();
       login(user);
     } 
+    const handleGoogleAuth = () =>{
+      signupWithGoogle();
+    }
   return (
     <div className='w-screen h-screen flex justify-center items-center bg-[#F8E7F6]'>
       <div className='px-5 py-5 w-[350px] bg-white rounded-xl shadow-xl'>
@@ -43,9 +47,14 @@ const LoginPage = () => {
               {showPassword?(<EyeOff className='text-slate-500 size-6' onClick={handlePasswordToggle} />):(<Eye className='text-slate-500 size-6' onClick={handlePasswordToggle} />)}
             </div>
           </div>
-          <button type='submit' className='rounded-lg w-full py-2 bg-[#e095d7] hover:bg-[#F8E7F6] text-sm font-semibold hover:scale-105 transition-all'>Log In</button>
+          <button type='submit' disabled={isLoading} className='rounded-lg w-full py-2 bg-[#e095d7] hover:bg-[#F8E7F6] text-sm font-semibold hover:scale-105 transition-all flex items-center justify-center'>{isLoading? <Loader2 className='animate-spin size-6'/>:"Log In"}</button>
         </form>
         <p className='text-center mt-3'>Does not have an ? <Link to={'/signup'}>Account</Link></p>
+        
+        <br />
+        <div className='w-full flex justify-center'>
+          <button className='flex gap-2 justify-center items-center py-3 border px-2 cursor-pointer' onClick={handleGoogleAuth}><img src={googleIcon} alt="" className='size-6' />  Continue with Google</button>
+        </div>
       </div>
     </div>
   )
