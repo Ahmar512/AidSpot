@@ -60,17 +60,3 @@ Open `http://localhost:5173/` in your browser to view the app.
 1. Allow location access when prompted.
 2. View nearby hospitals displayed on a map.
 3. Click on a hospital to see more details.
-
-## API Integration
-
-This project uses the Google Maps API to fetch nearby hospitals. If you need to configure the API key:
-
-1. Create a `.env` file in the root directory.
-2. Add the following:
-   ```sh
-   VITE_GOOGLE_MAPS_API_KEY=your_api_key_here
-   ```
-
-
-
-
