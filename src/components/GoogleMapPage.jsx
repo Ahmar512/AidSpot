@@ -22,7 +22,7 @@ const GoogleMapPage = ({add}) => {
     center = add;
   }
   
-  const [map, setMap] = useState(null);
+  const [googleMap, setMap] = useState(null);
   const {places, fetchData, library} = useAuthStore();
   const [selectedHospital, setSelectedHospital] = useState(null);
   
@@ -35,16 +35,16 @@ const GoogleMapPage = ({add}) => {
     locationRestriction: {
       circle: {
         center: { latitude: center.lat, longitude: center.lng },
-        radius: 2000.0,
+        radius: 5000.0,
       },
     },
   };
   useEffect(() => {
     if(add){
-      setTimeout(fetchData(url, requestBody, API_KEY),5000)
+      fetchData(url, requestBody, API_KEY)
     }
     console.log("places: ", places)
-  },[map,add]);
+  },[googleMap,add]);
   
   return (
     <div>

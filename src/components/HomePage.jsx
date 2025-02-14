@@ -32,7 +32,7 @@ const HomePage = () => {
     <div className='min-h-screen min-w-screen relative'>
         <div className='absolute min-w-screen top-3 max-sm:top-10 flex justify-center items-center  '>
             <div className='px-10 py-5 bg-white z-10 rounded-xl shadow-2xl text-center max-sm:px-3 max-sm:py-2'>
-                <h1 className='text-2xl font-semibold max-sm:text-lg'>Welcome {authUser.name}</h1>
+                <h1 className='text-2xl font-semibold max-sm:text-lg'>Welcome {authUser.displayName}</h1>
                 <p className='text-sm text-slate-700'>Here are some nearby hospitals</p>
             </div>
         </div>

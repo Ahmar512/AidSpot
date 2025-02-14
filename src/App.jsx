@@ -5,6 +5,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import SignInPage from './components/SignInPage';
 import HomePage from './components/HomePage';
 import { useAuthStore } from './store/authStore.js';
+import LoginPage from './components/LoginPage.jsx';
 
 
 const App = () => {
@@ -21,8 +22,9 @@ const App = () => {
   return (
     <div className='min-h-screen min-w-screen'>
       <Routes>
-        <Route path='/signin' element={!authUser? <SignInPage /> :  <Navigate to={'/'} />} />
-        <Route path='/' element={authUser ? <HomePage /> : <Navigate to={'/signin'} />} />
+        <Route path='/login' element={!authUser? <LoginPage /> :  <Navigate to={'/'} />} />
+        <Route path='/' element={authUser ? <HomePage /> : <Navigate to={'/login'} />} />
+        <Route path='/signup' element={!authUser? <SignInPage /> :  <Navigate to={'/'} />} />
       </Routes>
 
       
