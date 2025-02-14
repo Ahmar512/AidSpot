@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import GoogleMapPage from './GoogleMapPage'
 import { useAuthStore } from '../store/authStore';
+import { LogOut } from 'lucide-react';
 
 const HomePage = () => {
     const [address, setAddress] = useState(null);
@@ -35,7 +36,7 @@ const HomePage = () => {
             </div>
         </div>
         <div className='absolute min-w-screen bottom-2 flex justify-center items-center '>
-            <button className='px-5 py-3 cursor-pointer text-sm font-semibold  bg-[#7886C7] hover:bg-[#A9B5DF] z-10 rounded-lg shadow-xl' onClick={handleLogout}>Logout</button>
+            <button className='px-5 py-3 cursor-pointer text-sm font-semibold  bg-[#7886C7] hover:bg-[#A9B5DF] z-10 rounded-lg shadow-xl flex justify-center items-center gap-2' onClick={handleLogout}><LogOut className='size-4' /> Logout</button>
         </div>
         
 
