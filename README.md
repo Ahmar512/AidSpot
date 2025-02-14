@@ -16,6 +16,12 @@ You can access the live version of the project here:
 - **Hospital Details**: Provides essential details like name, address, and rating.
 - **Toast Notifications**: Use react-hot-toast for a better user experience.
 - **Responsive Design**: Works seamlessly on desktops, tablets, and mobile devices.
+- 
+## Screenshots
+
+![Screenshot 2025-02-14 223747](https://github.com/user-attachments/assets/e22121ef-b9c6-4027-b0e8-2fdb4ea03d18)
+![Screenshot 2025-02-14 223817](https://github.com/user-attachments/assets/57d5da5c-c752-4302-8ea0-88b7aae7f2fb)
+![Screenshot 2025-02-14 223830](https://github.com/user-attachments/assets/0baeb7da-a260-49ed-bbd7-c6dcab956973)
 
 ## Tech Stack
 
